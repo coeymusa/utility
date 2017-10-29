@@ -50,7 +50,7 @@ public class CSVUtilTest {
 	public void shouldFindLongestLine() throws FileNotFoundException{
 		String expected = "19";
 
-		String result = underTest.LongestLine(CSVReader.readCSVReturnLines("src/main/resources/RandomInteger.csv"));
+		String result = underTest.LongestLine(CSVReader.readCSVReturnLines("src/test/resources/UtilTest.csv"));
 
 		assertEquals(expected, result);
 	}

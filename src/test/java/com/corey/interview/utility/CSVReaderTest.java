@@ -25,7 +25,7 @@ public class CSVReaderTest {
 	public void shouldCreateArrayFromCSVFile() throws FileNotFoundException{
 		int[] expected = {1,2,3,4,5,6,7,8,9,10,10};
 		
-		int[] result = underTest.readCSV("src/test/resources/RandomIntegers.csv");
+		int[] result = underTest.readCSV("src/test/resources/ReadTest.csv");
 		
 		assertArrayEquals(expected,result);
 	}

@@ -52,7 +52,7 @@ class CSVTool {
 					case "all":
 						System.out.println("Most common integer: " + CSVUtil.mostCommon(csvIntegers));
 						System.out.println("Highest value on each single line: " + Arrays.toString(CSVUtil.highestPerLine(csvLineIntegers)));
-						System.out.println("Largest amount of integers on a single line: " + CSVUtil.LongestLine(csvLineIntegers));
+						System.out.println("Number of integers on the longest line: " + CSVUtil.LongestLine(csvLineIntegers));
 						System.out.println("Mean of values: " + CSVUtil.mean(csvIntegers));
 						System.out.println("Total of all integers: " + CSVUtil.total(csvIntegers));
 						break;
