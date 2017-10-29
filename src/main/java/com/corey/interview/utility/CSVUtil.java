@@ -4,8 +4,14 @@ import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.List;
 
+
 public class CSVUtil {
 
+	/**
+	 * Finds the total of an array of {@link Integers} 
+	 * 
+	 * @return {@link Integer}
+	 */
 	public static int total(int[] randomArray) {
 		int total = 0;
 		for (int index = 0; index < randomArray.length; index++) {
@@ -14,9 +20,13 @@ public class CSVUtil {
 
 		return total;
 	}
-
+	
+	/**
+	 * Finds the mean of an array of {@link Integers} 
+	 * 
+	 * @return {@link String}
+	 */
 	public static String mean(int[] randomArray) {
-
 		DecimalFormat df = new DecimalFormat("#.###");
 		df.setRoundingMode(RoundingMode.HALF_UP);
 		Double mean = (double) (total(randomArray)) / randomArray.length;
@@ -24,6 +34,12 @@ public class CSVUtil {
 		return df.format(mean);
 	}
 
+	
+	/**
+	 * Searches an array of {@link Integers} and returns the highest int in the array
+	 * 
+	 * @return {@link Integer}
+	 */
 	public static int[] highestPerLine(List<Integer[]> randomArray){
 		int[] ret = new int[randomArray.size()];
 		for(int index = 0; index < randomArray.size(); index++){
@@ -31,7 +47,12 @@ public class CSVUtil {
 		}
 		return ret;
 	}
-
+	
+	/**
+	 * Sorts an array of {@link Integers} and returns the most highest in the array
+	 * 
+	 * @return {@link Integer}
+	 */
 	public static int highest(Integer[] randomArray) {
 		int highest = randomArray[0];
 		for (int index = 1; index < randomArray.length; index++) {
@@ -43,7 +64,11 @@ public class CSVUtil {
 		return highest;
 	}
 
-	// O(nlogn) solution using initial sort
+	/**
+	 * Sorts an array of {@link Integers} and returns the most common number in the array
+	 * 
+	 * @return {@link String}
+	 */
 	public static String mostCommon(int[] randomArray) {
 		Arrays.sort(randomArray);
 		int highestInteger = 0;
@@ -68,7 +93,11 @@ public class CSVUtil {
 		}
 
 	}
-
+	/**
+	 * Sorts a {@link List} of an array of{@link Integers} and returns the most number of integers on the longest line
+	 * 
+	 * @return {@link String}
+	 */
 	public static String LongestLine(List<Integer[]> csvLineIntegers) {
 		int lineCount=0;
 		int maxLineCount=0;

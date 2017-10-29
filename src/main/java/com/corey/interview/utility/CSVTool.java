@@ -15,6 +15,7 @@ class CSVTool {
 							+"'m' : mean value of integers \n"
 							+"'h' : highest number of integers in a single line \n"
 							+"'c' : most common integer \n"
+							+"'l' : amount of integers on the longest line \n"
 							+"'all' : all statistic commands \n"
 							+"\n"
 							+"For statistic services pass the location of file and a character");
@@ -34,16 +35,19 @@ class CSVTool {
 				} else {
 					switch (args[1]) {					
 					case "t":
-						System.out.println(CSVUtil.total(csvIntegers));
+						System.out.println("Total of all integers: " + CSVUtil.total(csvIntegers));
 						break;
 					case "m":
-						System.out.println(CSVUtil.mean(csvIntegers));
+						System.out.println("Mean of values: " + CSVUtil.mean(csvIntegers));
 					break;
 					case "h":
-						System.out.println(Arrays.toString(CSVUtil.highestPerLine(csvLineIntegers)));
+						System.out.println("Highest value on each single line: " + Arrays.toString(CSVUtil.highestPerLine(csvLineIntegers)));
 						break;
 					case "c":
-						System.out.println(CSVUtil.mostCommon(csvIntegers));
+						System.out.println("Most common integer: " + CSVUtil.mostCommon(csvIntegers));
+						break;
+					case "l":
+						System.out.println("Largest amount of integers on a single line: " + CSVUtil.LongestLine(csvLineIntegers));
 						break;
 					case "all":
 						System.out.println("Most common integer: " + CSVUtil.mostCommon(csvIntegers));
