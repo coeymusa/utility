@@ -13,11 +13,14 @@ The statistics currently possible to compute are:
 
 To run:
 
-1.In command line run command:
+1.In command line in location of JAR file:
 java -cp utility-0.0.1-SNAPSHOT.jar com.interview.utility.CSVTool *paramters*
 
 For help using utility run:
 java -cp utility-0.0.1-SNAPSHOT.jar com.interview.utility.CSVTool help
 
-To run statisics on a CSV file run:
-java -cp utility-0.0.1-SNAPSHOT.jar com.interview.utility.CSVTool *path* all
+To run all statisic methods on a CSV file:
+java -cp utility-0.0.1-SNAPSHOT.jar com.interview.utility.CSVTool *pathToCSV* all
+
+Eclipse:
+Import maven project and run CVSTool with runtime arguments of *pathToCSV* *command*

@@ -1,8 +1,11 @@
 package com.corey.interview.utility;
 
-import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.*;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -10,16 +13,19 @@ public class CSVReaderTest {
 	CSVReader underTest = new CSVReader();
 	
 	
-//	@Test
-//	public void shouldCreateListFromCSVFile() throws FileNotFoundException{
-//		 new ArrayList<Integer[]>();
-//		List<Integer[]> expected = new ArrayList<Integer>(Arrays.asList());
-//		
-//		List<Integer[]> result = underTest.readCSVReturnLines("src/test/resources/RandomIntegers.csv");
-//		
-//		assertArrayEquals(expected.get(1),result.get(1));
-//	}
-//	
+	@Test
+	public void shouldCreateListFromCSVFile() throws FileNotFoundException{
+
+		List<Integer[]> expected = new ArrayList(Arrays.asList(1,2,3,4,5,6,7,8,9,10,10));
+		
+		List<Integer[]> result = underTest.readCSVReturnLines("src/test/resources/ReadTest.csv");
+		
+		for (int index =0; index < result.get(0).length; index++){
+			assertEquals(result.get(0)[index],expected.get(index));
+		}
+	
+	}
+	
 	
 	@Test
 	public void shouldCreateArrayFromCSVFile() throws FileNotFoundException{

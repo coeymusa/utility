@@ -13,12 +13,13 @@ public class CSVReader {
 		Scanner scanner = new Scanner(new File(filename));
 		scanner.useDelimiter("\n");
 		List<String> lines = new ArrayList<String>();
+		
 		//add values to list of string, line per list entry
 		while (scanner.hasNext()) {
 			lines.add(scanner.next());
 		}
 
-		//turn List<String> to List<Integer>
+		//turn List<String> to List<Integer> read line by line
 		for (String line : lines) {
 			Scanner scanner2 = new Scanner(line);
 			scanner2.useDelimiter(",");
