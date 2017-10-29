@@ -34,8 +34,8 @@ public class CSVReader {
 			
 			//add the current line of integers to the array
 			Integer[] tempLineArr = new Integer[tempLine.size()];
-			for (int i = 0; i < tempLineArr.length; i++) {
-				tempLineArr[i] = tempLine.get(i);
+			for (int index = 0; index < tempLineArr.length; index++) {
+				tempLineArr[index] = tempLine.get(index);
 			}
 			csvLineIntegers.add(tempLineArr);
 		}
@@ -47,18 +47,18 @@ public class CSVReader {
 		List<Integer[]> csvLineIntegers = readCSVReturnLines(filename);
 
 		int totalNumInts = 0; 
-		for(int i = 0; i < csvLineIntegers.size();i++){
-			totalNumInts += csvLineIntegers.get(i).length;
+		for(int index = 0; index < csvLineIntegers.size();index++){
+			totalNumInts += csvLineIntegers.get(index).length;
 		}
 
 		int[] csvIntegers = new int[totalNumInts];
-		int k = 0; 
+		int csvIntegersIndex = 0; 
 
 		//read each line, converting lines into one single array
 		for(int lineIndex = 0; lineIndex < csvLineIntegers.size();lineIndex++){
 			for(int intIndex = 0; intIndex < csvLineIntegers.get(lineIndex).length; intIndex++){
-				csvIntegers[k] = csvLineIntegers.get(lineIndex)[intIndex]; 
-				k++;
+				csvIntegers[csvIntegersIndex] = csvLineIntegers.get(lineIndex)[intIndex]; 
+				csvIntegersIndex++;
 			}
 		}
 		return csvIntegers;
