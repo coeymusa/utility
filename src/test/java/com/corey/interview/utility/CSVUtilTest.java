@@ -64,8 +64,20 @@ public class CSVUtilTest {
 	}
 
 	@Test
-	public void shouldNotFindMostCommonInteger(){
+	public void shouldNotFindMostCommonIntegerWithUnique(){
 		int[] intList = {1,2,3,4,5,6,7,8,9,10};
+
+		String expected = "No modal value";
+
+		String result =underTest.mostCommon(intList);
+
+		assertEquals(expected,result);
+	}
+	
+
+	@Test
+	public void shouldNotFindMostCommonIntegerWithTwoDuplicates(){
+		int[] intList = {1,2,3,4,5,6,7,8,9,9,10,10};
 
 		String expected = "No modal value";
 

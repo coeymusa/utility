@@ -74,6 +74,8 @@ public class CSVUtil {
 		int highestInteger = 0;
 		int maxCount = 0;
 		int index = 0;
+		int duplicateMax=0;
+		
 		while (index < randomArray.length) {
 			int current = randomArray[index];
 			int currentCount = 0;
@@ -84,9 +86,12 @@ public class CSVUtil {
 			if (currentCount > maxCount) {
 				maxCount = currentCount;
 				highestInteger = current;
+			} else if (currentCount == maxCount){
+				duplicateMax = currentCount;
 			}
 		}
-		if (maxCount != 1){
+		
+		if (maxCount != duplicateMax){
 			return String.valueOf(highestInteger);
 		} else {
 			return "No modal value";
