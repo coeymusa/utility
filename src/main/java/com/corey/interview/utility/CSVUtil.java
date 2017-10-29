@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CSVUtil {
-	
+
 	public static int total(int[] randomArray) {
 		int total = 0;
 		for (int index = 0; index < randomArray.length; index++) {
@@ -16,11 +16,11 @@ public class CSVUtil {
 	}
 
 	public static String mean(int[] randomArray) {
-		
+
 		DecimalFormat df = new DecimalFormat("#.###");
 		df.setRoundingMode(RoundingMode.HALF_UP);
 		Double mean = (double) (total(randomArray)) / randomArray.length;
-		
+
 		return df.format(mean);
 	}
 
@@ -44,10 +44,10 @@ public class CSVUtil {
 	}
 
 	// O(nlogn) solution using initial sort
-	public static int mostCommon(int[] randomArray) {
+	public static String mostCommon(int[] randomArray) {
 		Arrays.sort(randomArray);
-		int pop = 0;
-		int popCount = 0;
+		int highestInteger = 0;
+		int maxCount = 0;
 		int index = 0;
 		while (index < randomArray.length) {
 			int current = randomArray[index];
@@ -56,12 +56,36 @@ public class CSVUtil {
 				currentCount++;
 				index++;
 			}
-			if (currentCount > popCount) {
-				popCount = currentCount;
-				pop = current;
+			if (currentCount > maxCount) {
+				maxCount = currentCount;
+				highestInteger = current;
 			}
 		}
-		return pop;
+		if (maxCount != 1){
+			return String.valueOf(highestInteger);
+		} else {
+			return "No modal value";
+		}
+
+	}
+
+	public static String LongestLine(List<Integer[]> csvLineIntegers) {
+		int lineCount=0;
+		int maxLineCount=0;
+
+		for (int lineIndex=0; lineIndex < csvLineIntegers.size();lineIndex++){
+			for(int intIndex =0; intIndex < csvLineIntegers.get(lineIndex).length; intIndex ++){
+				lineCount++;
+
+				if(lineCount > maxLineCount){
+					maxLineCount = lineCount ;
+				}
+			}
+			lineCount =0;
+		}
+
+		return String.valueOf(maxLineCount);
+
 	}
 }
 

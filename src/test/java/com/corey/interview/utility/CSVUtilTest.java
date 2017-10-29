@@ -2,6 +2,11 @@ package com.corey.interview.utility;
 
 import static org.junit.Assert.assertEquals;
 
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.junit.Test;
 
 
@@ -34,21 +39,38 @@ public class CSVUtilTest {
 	@Test
 	public void shouldFindMostCommonIntegerList(){
 
-		int expected = 10;
+		String expected = "10";
 
-		int result =underTest.mostCommon(intList);
+		String result =underTest.mostCommon(intList);
 
 		assertEquals(expected,result);
 	}
 
-//	@Test
-//	public void shouldNotFindMostCommonInteger(){
-//		List<Integer> intList = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6,7,8,9,10));
-//
-//		String expected = "No modal value";
-//
-//		String result =underTest.mostCommon(intList);
-//
-//		assertEquals(expected,result);
-//	}
+	@Test
+	public void shouldFindLongestLine() throws FileNotFoundException{
+		String expected = "19";
+
+		String result = underTest.LongestLine(CSVReader.readCSVReturnLines("src/main/resources/RandomInteger.csv"));
+
+		assertEquals(expected, result);
+	}
+
+
+	@Test(expected = FileNotFoundException.class)
+	public void shouldThrowFileNotFoundException() throws FileNotFoundException{
+		String expected = "19";
+
+		String result = underTest.LongestLine(CSVReader.readCSVReturnLines("src/main/resources/failedTest.csv"));
+	}
+
+	@Test
+	public void shouldNotFindMostCommonInteger(){
+		int[] intList = {1,2,3,4,5,6,7,8,9,10};
+
+		String expected = "No modal value";
+
+		String result =underTest.mostCommon(intList);
+
+		assertEquals(expected,result);
+	}
 }
