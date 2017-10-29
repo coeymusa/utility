@@ -15,7 +15,6 @@ class CSVTool {
 							+"'m' : mean value of integers \n"
 							+"'h' : highest number of integers in a single line \n"
 							+"'c' : most common integer \n"
-							+"'create' : generate new CSV file of random integers \n"
 							+"'all' : all statistic commands \n"
 							+"\n"
 							+"For statistic services pass the location of file and a character");
@@ -45,10 +44,6 @@ class CSVTool {
 						break;
 					case "c":
 						System.out.println(CSVUtil.mostCommon(csvIntegers));
-						break;
-					case "create":
-						CSVWriter.createCSV(100, -1000, 1000, "/src/main/resources/results.csv");
-						System.out.println("CSV Created at location: src/main/resources/results.csv");
 						break;
 					case "all":
 						System.out.println("Most common: " + CSVUtil.mostCommon(csvIntegers));
