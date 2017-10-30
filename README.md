@@ -6,21 +6,21 @@ With the ability to read a CSV file of integers, to produce statisics on the con
 
 The statistics currently possible to compute are:
 
-• Total number of integers, 
-• Mean value of all integers (to three decimal places),
-• Highest number of integers in a single line, 
-• Most common integer.
+â€¢ Total number of integers, 
+â€¢ Mean value of all integers (to three decimal places),
+â€¢ Highest number of integers in a single line, 
+â€¢ Most common integer.
 
 To run:
 
 1.In command line in location of JAR file:
-java -cp utility-0.0.1-SNAPSHOT.jar com.corey.interview.utility.CSVTool *paramters*
+java -jar utility-0.0.1-SNAPSHOT.jar *pathToCSV* *command*
 
 For help using utility run:
-java -cp utility-0.0.1-SNAPSHOT.jar com.corey.interview.utility.CSVTool help
+java -jar utility-0.0.1-SNAPSHOT.jar help
 
 To run all statisic methods on a CSV file:
-java -cp utility-0.0.1-SNAPSHOT.jar com.corey.interview.utility.CSVTool *pathToCSV* all
+java -jar utility-0.0.1-SNAPSHOT.jar *pathToCSV* all
 
 Eclipse:
 Import maven project and run CVSTool with runtime arguments of *pathToCSV* *command*
